@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>PURPLE LABEL | BYN & USD</title>
+    <title>PURPLE LABEL | PREMIUM</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         * {
@@ -16,9 +16,9 @@
         body {
             background: #0a0a0a;
             background-image: 
-                radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.2) 0%, transparent 30%),
-                radial-gradient(circle at 80% 70%, rgba(147, 51, 234, 0.2) 0%, transparent 30%),
-                radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.3) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(147, 51, 234, 0.3) 0%, transparent 40%),
+                linear-gradient(135deg, rgba(147,51,234,0.1) 0%, transparent 100%);
             color: white;
             padding: 16px;
             min-height: 100vh;
@@ -32,27 +32,24 @@
         }
 
         /* ГЛАВНЫЕ ЭФФЕКТЫ */
-        .glass {
-            background: rgba(26, 26, 26, 0.8);
+        .glass-card {
+            background: rgba(20, 20, 20, 0.8);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(147, 51, 234, 0.4);
+            border: 1px solid rgba(147, 51, 234, 0.5);
             box-shadow: 
-                0 20px 40px -15px rgba(147, 51, 234, 0.5),
+                0 25px 50px -15px rgba(147, 51, 234, 0.6),
                 0 0 0 1px rgba(147, 51, 234, 0.2) inset,
-                0 0 40px rgba(147, 51, 234, 0.3);
+                0 0 50px rgba(147, 51, 234, 0.3);
+            border-radius: 30px;
         }
 
         .purple-glow {
-            text-shadow: 0 0 20px #9333ea, 0 0 40px rgba(147, 51, 234, 0.6);
+            text-shadow: 0 0 20px #9333ea, 0 0 40px rgba(147, 51, 234, 0.7);
         }
 
-        .byn-glow {
-            text-shadow: 0 0 20px #fbbf24, 0 0 40px rgba(251, 191, 36, 0.4);
-        }
-
-        .usd-glow {
-            text-shadow: 0 0 20px #4ade80, 0 0 40px rgba(74, 222, 128, 0.4);
+        .gold-glow {
+            text-shadow: 0 0 20px #fbbf24, 0 0 40px rgba(251, 191, 36, 0.5);
         }
 
         /* ШАПКА */
@@ -64,9 +61,9 @@
             padding: 14px 22px;
             background: rgba(10, 10, 10, 0.8);
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(147, 51, 234, 0.6);
+            border: 1px solid rgba(147, 51, 234, 0.7);
             border-radius: 40px;
-            box-shadow: 0 15px 40px rgba(147, 51, 234, 0.3);
+            box-shadow: 0 15px 40px rgba(147, 51, 234, 0.4);
         }
 
         .header h1 {
@@ -88,13 +85,13 @@
             padding: 8px 22px;
             border-radius: 40px;
             cursor: pointer;
-            box-shadow: 0 5px 20px rgba(147, 51, 234, 0.5);
+            box-shadow: 0 5px 20px rgba(147, 51, 234, 0.6);
             transition: all 0.3s;
         }
 
         .back-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 30px #9333ea;
+            box-shadow: 0 10px 35px #9333ea;
         }
 
         .badge {
@@ -117,9 +114,9 @@
             align-items: center;
             background: rgba(20, 20, 20, 0.85);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(147, 51, 234, 0.6);
+            border: 1px solid rgba(147, 51, 234, 0.7);
             border-radius: 40px;
-            box-shadow: 0 15px 40px rgba(147, 51, 234, 0.4);
+            box-shadow: 0 15px 40px rgba(147, 51, 234, 0.5);
             position: relative;
             overflow: hidden;
         }
@@ -131,8 +128,8 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(147,51,234,0.2) 0%, transparent 70%);
-            animation: rotate 15s linear infinite;
+            background: radial-gradient(circle, rgba(147,51,234,0.3) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
         }
 
         @keyframes rotate {
@@ -184,7 +181,7 @@
             margin-bottom: 20px;
             width: fit-content;
             cursor: pointer;
-            box-shadow: 0 10px 35px rgba(147, 51, 234, 0.6);
+            box-shadow: 0 10px 35px rgba(147, 51, 234, 0.7);
             transition: all 0.3s;
             font-size: 18px;
             font-weight: 700;
@@ -192,7 +189,7 @@
 
         .cart-button:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 20px 50px #9333ea;
+            box-shadow: 0 20px 55px #9333ea;
         }
 
         .cart-count {
@@ -222,7 +219,7 @@
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
-            box-shadow: 0 15px 40px rgba(147, 51, 234, 0.5);
+            box-shadow: 0 15px 40px rgba(147, 51, 234, 0.6);
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
@@ -235,7 +232,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(147,51,234,0.5), transparent);
+            background: linear-gradient(90deg, transparent, rgba(147,51,234,0.6), transparent);
             transition: left 0.6s;
         }
 
@@ -245,7 +242,7 @@
 
         .menu-btn:hover {
             transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 30px 60px #9333ea;
+            box-shadow: 0 35px 70px #9333ea;
             background: linear-gradient(145deg, #9333ea, #7e22ce);
             border-color: white;
         }
@@ -264,18 +261,47 @@
         .product {
             background: rgba(20, 20, 20, 0.95);
             backdrop-filter: blur(12px);
-            border: 2px solid rgba(147, 51, 234, 0.7);
+            border: 2px solid rgba(147, 51, 234, 0.8);
             border-radius: 45px;
             padding: 24px;
             margin-bottom: 22px;
-            box-shadow: 0 20px 50px rgba(147, 51, 234, 0.5);
+            box-shadow: 0 20px 50px rgba(147, 51, 234, 0.6);
             transition: all 0.3s;
         }
 
         .product:hover {
             transform: translateY(-5px);
-            box-shadow: 0 35px 70px #9333ea;
+            box-shadow: 0 40px 80px #9333ea;
             border-color: white;
+        }
+
+        /* ФОТО ТОВАРА */
+        .product-image {
+            width: 100%;
+            height: 250px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            border: 2px dashed rgba(147,51,234,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-image.no-image::after {
+            content: '📸 НЕТ ФОТО';
+            color: #9333ea;
+            font-size: 18px;
+            font-weight: 700;
+            opacity: 0.7;
         }
 
         .product-title {
@@ -290,8 +316,93 @@
         .product-info {
             color: #c0c0c0;
             font-size: 16px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             letter-spacing: 0.5px;
+        }
+
+        /* ЦВЕТА И РАЗМЕРЫ */
+        .variations {
+            background: rgba(0,0,0,0.5);
+            border-radius: 25px;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid rgba(147,51,234,0.3);
+        }
+
+        .variation-title {
+            color: #9333ea;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .color-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .color-item {
+            padding: 8px 16px;
+            background: #1a1a1a;
+            border: 2px solid #2d2d2d;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .color-item:hover {
+            border-color: #9333ea;
+        }
+
+        .color-item.selected {
+            background: #9333ea;
+            border-color: white;
+            box-shadow: 0 0 20px rgba(147,51,234,0.8);
+        }
+
+        .size-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .size-item {
+            padding: 8px 16px;
+            background: #1a1a1a;
+            border: 2px solid #2d2d2d;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .size-item:hover {
+            border-color: #9333ea;
+        }
+
+        .size-item.selected {
+            background: #9333ea;
+            border-color: white;
+            box-shadow: 0 0 20px rgba(147,51,234,0.8);
+        }
+
+        .stock-info {
+            color: #4ade80;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .out-of-stock {
+            color: #ef4444;
+            font-size: 14px;
+            font-weight: 600;
         }
 
         .prices {
@@ -344,14 +455,19 @@
             font-size: 20px;
             font-weight: 800;
             cursor: pointer;
-            box-shadow: 0 10px 35px rgba(147,51,234,0.7);
+            box-shadow: 0 10px 35px rgba(147,51,234,0.8);
             transition: all 0.3s;
             letter-spacing: 1px;
         }
 
-        .add-btn:hover {
+        .add-btn:hover:not(:disabled) {
             transform: scale(1.02);
-            box-shadow: 0 20px 50px #9333ea;
+            box-shadow: 0 20px 55px #9333ea;
+        }
+
+        .add-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
 
         .delete-btn {
@@ -363,7 +479,7 @@
             width: 100%;
             margin-top: 14px;
             cursor: pointer;
-            box-shadow: 0 5px 25px rgba(220,38,38,0.6);
+            box-shadow: 0 5px 25px rgba(220,38,38,0.7);
             font-weight: 700;
             font-size: 16px;
             transition: all 0.3s;
@@ -371,7 +487,7 @@
 
         .delete-btn:hover {
             transform: scale(1.02);
-            box-shadow: 0 10px 35px #dc2626;
+            box-shadow: 0 10px 40px #dc2626;
         }
 
         /* ФОРМЫ */
@@ -379,42 +495,117 @@
             width: 100%;
             padding: 18px 24px;
             background: rgba(20, 20, 20, 0.95);
-            border: 2px solid rgba(147, 51, 234, 0.5);
+            border: 2px solid rgba(147, 51, 234, 0.6);
             border-radius: 45px;
             color: white;
             font-size: 16px;
             margin: 5px 0 20px 0;
-            box-shadow: 0 5px 25px rgba(147,51,234,0.3);
+            box-shadow: 0 5px 25px rgba(147,51,234,0.4);
             transition: all 0.3s;
         }
 
         .input:focus, .textarea:focus, .select:focus {
             border-color: #9333ea;
-            box-shadow: 0 0 40px rgba(147,51,234,0.7);
+            box-shadow: 0 0 50px rgba(147,51,234,0.8);
             outline: none;
+        }
+
+        /* АДМИН ПАНЕЛЬ */
+        .admin-section {
+            background: rgba(20, 20, 20, 0.95);
+            border: 2px solid #9333ea;
+            border-radius: 45px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 20px 50px rgba(147,51,234,0.5);
+        }
+
+        .admin-title {
+            color: #9333ea;
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            text-shadow: 0 0 30px #9333ea;
+        }
+
+        .variation-input-group {
+            background: rgba(0,0,0,0.3);
+            border-radius: 30px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid rgba(147,51,234,0.3);
+        }
+
+        .variation-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 80px;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .variation-row input {
+            padding: 12px;
+            background: #1a1a1a;
+            border: 1px solid #2d2d2d;
+            border-radius: 25px;
+            color: white;
+        }
+
+        .add-variation-btn {
+            background: #9333ea;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 12px;
+            width: 100%;
+            margin-top: 10px;
+            cursor: pointer;
+            font-weight: 700;
         }
 
         /* КОРЗИНА */
         .cart-item {
             background: rgba(20, 20, 20, 0.95);
-            border: 2px solid rgba(147, 51, 234, 0.6);
+            border: 2px solid rgba(147, 51, 234, 0.7);
             border-radius: 35px;
             padding: 20px;
             margin-bottom: 14px;
+            box-shadow: 0 10px 35px rgba(147,51,234,0.5);
+        }
+
+        .cart-item-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 10px 35px rgba(147,51,234,0.4);
+            margin-bottom: 10px;
+        }
+
+        .cart-item-title {
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .cart-item-details {
+            color: #c0c0c0;
+            font-size: 15px;
+            margin: 8px 0;
+        }
+
+        .cart-item-price {
+            color: #9333ea;
+            font-size: 20px;
+            font-weight: 700;
         }
 
         .cart-total {
-            background: linear-gradient(145deg, rgba(147,51,234,0.3), rgba(147,51,234,0.1));
+            background: linear-gradient(145deg, rgba(147,51,234,0.4), rgba(147,51,234,0.2));
             border: 2px solid #9333ea;
             border-radius: 45px;
             padding: 25px;
             text-align: center;
             margin: 25px 0;
-            box-shadow: 0 15px 45px rgba(147,51,234,0.5);
+            box-shadow: 0 15px 45px rgba(147,51,234,0.6);
         }
 
         .cart-total-price {
@@ -424,7 +615,7 @@
             text-shadow: 0 0 40px rgba(147,51,234,0.9);
         }
 
-        /* ВАЛЮТЫ - BYN И USD */
+        /* ВАЛЮТЫ */
         .currency-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -494,7 +685,7 @@
             border-radius: 45px;
             padding: 24px;
             margin: 25px 0;
-            box-shadow: 0 15px 45px rgba(147,51,234,0.4);
+            box-shadow: 0 15px 45px rgba(147,51,234,0.5);
         }
 
         .contact-row {
@@ -515,7 +706,7 @@
             border-radius: 45px;
             padding: 24px;
             margin-bottom: 18px;
-            box-shadow: 0 15px 40px rgba(147,51,234,0.4);
+            box-shadow: 0 15px 40px rgba(147,51,234,0.5);
         }
 
         .empty {
@@ -530,7 +721,7 @@
         }
 
         .message {
-            background: linear-gradient(145deg, rgba(147,51,234,0.4), rgba(147,51,234,0.2));
+            background: linear-gradient(145deg, rgba(147,51,234,0.5), rgba(147,51,234,0.3));
             border: 2px solid #9333ea;
             color: white;
             padding: 16px;
@@ -540,7 +731,7 @@
             text-align: center;
             font-size: 18px;
             font-weight: 700;
-            box-shadow: 0 10px 35px rgba(147,51,234,0.6);
+            box-shadow: 0 10px 35px rgba(147,51,234,0.7);
             backdrop-filter: blur(10px);
         }
 
@@ -554,7 +745,7 @@
             font-size: 22px;
             font-weight: 800;
             cursor: pointer;
-            box-shadow: 0 15px 45px rgba(147,51,234,0.8);
+            box-shadow: 0 15px 45px rgba(147,51,234,0.9);
             transition: all 0.3s;
             letter-spacing: 1.5px;
             margin-top: 20px;
@@ -562,23 +753,23 @@
 
         .submit-btn:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 30px 65px #9333ea;
+            box-shadow: 0 30px 70px #9333ea;
         }
 
         /* АНИМАЦИИ */
         @keyframes pulse {
-            0% { box-shadow: 0 0 25px rgba(147,51,234,0.6); }
-            50% { box-shadow: 0 0 60px rgba(147,51,234,0.9); }
-            100% { box-shadow: 0 0 25px rgba(147,51,234,0.6); }
+            0% { box-shadow: 0 0 25px rgba(147,51,234,0.7); }
+            50% { box-shadow: 0 0 70px rgba(147,51,234,1); }
+            100% { box-shadow: 0 0 25px rgba(147,51,234,0.7); }
         }
 
         .pulse {
-            animation: pulse 2.5s infinite;
+            animation: pulse 3s infinite;
         }
 
         .page {
             display: none;
-            animation: fadeIn 0.4s ease;
+            animation: fadeIn 0.5s ease;
         }
 
         .page.active {
@@ -586,7 +777,7 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
@@ -629,27 +820,39 @@
         <div id="pageStock" class="page">
             <!-- АДМИН ПАНЕЛЬ -->
             <div id="adminPanel" style="display: none;">
-                <h3 style="color:#9333ea; font-size:26px; margin:25px 0; text-shadow:0 0 30px #9333ea;">➕ ДОБАВИТЬ ТОВАР</h3>
-                <input type="text" class="input" id="productName" placeholder="НАЗВАНИЕ ТОВАРА">
-                <input type="text" class="input" id="productCategory" placeholder="КАТЕГОРИЯ">
-                <input type="text" class="input" id="productSizes" placeholder="РАЗМЕРЫ">
-                
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin:20px 0;">
-                    <input type="number" class="input" id="priceBYN" placeholder="ЦЕНА BYN" style="border-color:#fbbf24;">
-                    <input type="number" class="input" id="priceUSD" placeholder="ЦЕНА USD" style="border-color:#4ade80;">
-                </div>
+                <div class="admin-section">
+                    <div class="admin-title">➕ ДОБАВИТЬ ТОВАР</div>
+                    
+                    <input type="text" class="input" id="productName" placeholder="НАЗВАНИЕ ТОВАРА">
+                    <input type="text" class="input" id="productCategory" placeholder="КАТЕГОРИЯ">
+                    <input type="text" class="input" id="productImage" placeholder="ССЫЛКА НА ФОТО">
+                    
+                    <div class="variation-input-group">
+                        <div style="color:#9333ea; font-size:18px; font-weight:700; margin-bottom:15px;">🎨 ЦВЕТА И РАЗМЕРЫ</div>
+                        
+                        <div id="variationsContainer">
+                            <!-- Вариации будут добавляться сюда -->
+                        </div>
+                        
+                        <button class="add-variation-btn" id="addVariationBtn">➕ ДОБАВИТЬ ЦВЕТ</button>
+                    </div>
+                    
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin:20px 0;">
+                        <input type="number" class="input" id="priceBYN" placeholder="ЦЕНА BYN" style="border-color:#fbbf24;">
+                        <input type="number" class="input" id="priceUSD" placeholder="ЦЕНА USD" style="border-color:#4ade80;">
+                    </div>
 
-                <button class="submit-btn" id="addProductBtn">➕ ДОБАВИТЬ</button>
-                <hr style="border:1px solid #9333ea; margin:35px 0; box-shadow:0 0 30px #9333ea;">
+                    <button class="submit-btn" id="addProductBtn">➕ ДОБАВИТЬ ТОВАР</button>
+                </div>
             </div>
 
-            <h3 style="color:#9333ea; font-size:26px; margin:20px 0; text-shadow:0 0 30px #9333ea;">📋 ТОВАРЫ</h3>
+            <div style="color:#9333ea; font-size:26px; margin:20px 0; text-shadow:0 0 30px #9333ea;">📋 ТОВАРЫ</div>
             <div id="productsList"></div>
         </div>
 
         <!-- КОРЗИНА -->
         <div id="pageCart" class="page">
-            <h3 style="color:#9333ea; font-size:30px; margin:20px 0; text-shadow:0 0 40px #9333ea;">🛒 КОРЗИНА</h3>
+            <div style="color:#9333ea; font-size:30px; margin:20px 0; text-shadow:0 0 40px #9333ea;">🛒 КОРЗИНА</div>
             <div id="cartItems"></div>
             <div id="cartEmpty" class="empty" style="display:none;">КОРЗИНА ПУСТА</div>
 
@@ -660,7 +863,7 @@
                     <div style="color:#9333ea; font-size:22px; margin-top:8px;" id="cartCurrency">BYN</div>
                 </div>
 
-                <!-- ВАЛЮТА - BYN И USD -->
+                <!-- ВАЛЮТА -->
                 <div class="currency-grid" id="currencySelector">
                     <div class="currency-item active" data-curr="BYN" style="border-color:#fbbf24;">🇧🇾 BYN</div>
                     <div class="currency-item" data-curr="USD" style="border-color:#4ade80;">🇺🇸 USD</div>
@@ -690,17 +893,17 @@
 
         <!-- СВОЙ ТОВАР -->
         <div id="pageMyProduct" class="page">
-            <h3 style="color:#9333ea; font-size:30px; margin:20px 0; text-shadow:0 0 40px #9333ea;">👕 СВОЙ ТОВАР</h3>
+            <div style="color:#9333ea; font-size:30px; margin:20px 0; text-shadow:0 0 40px #9333ea;">👕 СВОЙ ТОВАР</div>
             <input type="text" class="input" id="prodTitle" placeholder="НАЗВАНИЕ ТОВАРА">
             <input type="text" class="input" id="prodCategory" placeholder="КАТЕГОРИЯ">
             <input type="text" class="input" id="prodContact" placeholder="ВАШ @USERNAME">
-            <textarea class="textarea" id="prodComment" placeholder="ОПИСАНИЕ, РАЗМЕРЫ" rows="3"></textarea>
-            <button class="submit-btn" id="sendProductBtn">📤 ОТПРАВИТЬ</button>
+            <textarea class="textarea" id="prodComment" placeholder="ОПИСАНИЕ, РАЗМЕРЫ, ЦВЕТ" rows="3"></textarea>
+            <button class="submit-btn" id="sendProductBtn">📤 ОТПРАВИТЬ ЗАЯВКУ</button>
         </div>
 
         <!-- ПРОБЛЕМА -->
         <div id="pageReport" class="page">
-            <h3 style="color:#9333ea; font-size:30px; margin:20px 0; text-shadow:0 0 40px #9333ea;">⚠️ ПРОБЛЕМА</h3>
+            <div style="color:#9333ea; font-size:30px; margin:20px 0; text-shadow:0 0 40px #9333ea;">⚠️ ПРОБЛЕМА</div>
             <select class="select" id="reportTopic">
                 <option>ОШИБКА В ПРИЛОЖЕНИИ</option>
                 <option>ПРОБЛЕМА С ЗАКАЗОМ</option>
@@ -714,7 +917,7 @@
 
         <!-- ЗАЯВКИ (АДМИНЫ) -->
         <div id="pageChats" class="page">
-            <h3 style="color:#9333ea; font-size:30px; margin:20px 0; text-shadow:0 0 40px #9333ea;">💬 ЗАЯВКИ</h3>
+            <div style="color:#9333ea; font-size:30px; margin:20px 0; text-shadow:0 0 40px #9333ea;">💬 ЗАЯВКИ</div>
             <div id="requestsList"></div>
         </div>
     </div>
@@ -740,23 +943,24 @@
             { 
                 id: 1, 
                 name: 'NIKE AIR FORCE 1', 
-                category: 'КРОССОВКИ', 
-                sizes: '40-45',
+                category: 'КРОССОВКИ',
+                image: '',
+                variations: [
+                    { color: 'БЕЛЫЙ', sizes: { '40': 2, '41': 3, '42': 1, '43': 0, '44': 2 } },
+                    { color: 'ЧЕРНЫЙ', sizes: { '40': 1, '41': 2, '42': 2, '43': 1, '44': 0 } }
+                ],
                 prices: { byn: 2200, usd: 110 }
             },
             { 
                 id: 2, 
                 name: 'ESSENTIALS FOG', 
-                category: 'ХУДИ', 
-                sizes: 'S-L',
+                category: 'ХУДИ',
+                image: '',
+                variations: [
+                    { color: 'СЕРЫЙ', sizes: { 'S': 2, 'M': 3, 'L': 1, 'XL': 0 } },
+                    { color: 'ЧЕРНЫЙ', sizes: { 'S': 1, 'M': 2, 'L': 0, 'XL': 1 } }
+                ],
                 prices: { byn: 1850, usd: 95 }
-            },
-            { 
-                id: 3, 
-                name: 'ADIDAS CAMPUS', 
-                category: 'КРОССОВКИ', 
-                sizes: '41-44',
-                prices: { byn: 2000, usd: 105 }
             }
         ];
 
@@ -809,6 +1013,30 @@
         document.getElementById('btnReport').onclick = () => showPage('report', 'ПРОБЛЕМА');
         document.getElementById('btnChats').onclick = () => { if (isAdmin) showPage('chats', 'ЗАЯВКИ'); };
 
+        // ============ УПРАВЛЕНИЕ ВАРИАЦИЯМИ (АДМИН) ============
+        let variationCount = 0;
+        
+        document.getElementById('addVariationBtn').onclick = function() {
+            const container = document.getElementById('variationsContainer');
+            const variationId = `var_${Date.now()}_${variationCount}`;
+            
+            const div = document.createElement('div');
+            div.className = 'variation-row';
+            div.id = variationId;
+            div.innerHTML = `
+                <input type="text" class="variation-color" placeholder="ЦВЕТ (НАПР. БЕЛЫЙ)">
+                <input type="text" class="variation-sizes" placeholder="РАЗМЕРЫ И КОЛ-ВО (40:2,41:3)">
+                <button class="delete-btn" onclick="removeVariation('${variationId}')" style="padding:12px; margin:0;">✕</button>
+            `;
+            
+            container.appendChild(div);
+            variationCount++;
+        };
+
+        window.removeVariation = function(id) {
+            document.getElementById(id)?.remove();
+        };
+
         // ============ ТОВАРЫ ============
         function renderProducts() {
             const container = document.getElementById('productsList');
@@ -819,13 +1047,38 @@
 
             let html = '';
             products.forEach(p => {
+                // Строим варианты цветов и размеров для отображения
+                let variationsHtml = '';
+                p.variations.forEach(v => {
+                    let sizesHtml = '';
+                    for (let [size, qty] of Object.entries(v.sizes)) {
+                        sizesHtml += `<span style="display:inline-block; margin:5px; padding:5px 10px; background:#1a1a1a; border-radius:15px;">${size} <span style="color:${qty > 0 ? '#4ade80' : '#ef4444'};">(${qty})</span></span>`;
+                    }
+                    
+                    variationsHtml += `
+                        <div style="margin:10px 0; padding:10px; background:rgba(0,0,0,0.3); border-radius:15px;">
+                            <div style="color:#9333ea; font-weight:700; margin-bottom:5px;">🎨 ${v.color}</div>
+                            <div>${sizesHtml}</div>
+                        </div>
+                    `;
+                });
+
                 html += `
-                    <div class="product">
+                    <div class="product" id="product_${p.id}">
+                        <div class="product-image ${!p.image ? 'no-image' : ''}">
+                            ${p.image ? `<img src="${p.image}" alt="${p.name}">` : ''}
+                        </div>
                         <div class="product-title">${p.name}</div>
-                        <div class="product-info">${p.category} • ${p.sizes}</div>
+                        <div class="product-info">${p.category}</div>
+                        
+                        <div class="variations">
+                            <div class="variation-title">🎨 ДОСТУПНЫЕ ВАРИАНТЫ</div>
+                            ${variationsHtml}
+                        </div>
+                        
                         <div class="prices">
                             <div class="price-item">
-                                <div class="price-currency byn-glow">🇧🇾 BYN</div>
+                                <div class="price-currency gold-glow">🇧🇾 BYN</div>
                                 <div class="price-value byn">${p.prices.byn}</div>
                             </div>
                             <div class="price-item">
@@ -833,28 +1086,175 @@
                                 <div class="price-value usd">${p.prices.usd}</div>
                             </div>
                         </div>
-                        <button class="add-btn" onclick="addToCart(${p.id})">🛒 В КОРЗИНУ</button>
-                        ${isAdmin ? `<button class="delete-btn" onclick="deleteProduct(${p.id})">🗑 УДАЛИТЬ</button>` : ''}
+                        
+                        <button class="add-btn" onclick="showAddToCartModal(${p.id})">🛒 ВЫБРАТЬ И КУПИТЬ</button>
+                        ${isAdmin ? `<button class="delete-btn" onclick="deleteProduct(${p.id})">🗑 УДАЛИТЬ ТОВАР</button>` : ''}
                     </div>
                 `;
             });
             container.innerHTML = html;
         }
 
-        window.addToCart = function(id) {
-            const product = products.find(p => p.id === id);
+        // ============ МОДАЛЬНОЕ ОКНО ДЛЯ ВЫБОРА ЦВЕТА/РАЗМЕРА ============
+        window.showAddToCartModal = function(productId) {
+            const product = products.find(p => p.id === productId);
             if (!product) return;
+
+            // Создаем временное модальное окно
+            const modalId = `modal_${Date.now()}`;
+            const modal = document.createElement('div');
+            modal.id = modalId;
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.9);
+                backdrop-filter: blur(10px);
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+            `;
+
+            let colorsHtml = '';
+            let selectedColor = product.variations[0]?.color || '';
             
-            const existing = cart.find(item => item.id === id);
+            product.variations.forEach((v, index) => {
+                colorsHtml += `<div class="color-item" onclick="selectColor('${modalId}', '${v.color}')" data-color="${v.color}">${v.color}</div>`;
+            });
+
+            let sizesHtml = '';
+            if (product.variations[0]) {
+                const firstVar = product.variations[0];
+                for (let [size, qty] of Object.entries(firstVar.sizes)) {
+                    sizesHtml += `<div class="size-item" onclick="selectSize('${modalId}', '${size}')" data-size="${size}" data-qty="${qty}">${size} <span style="color:${qty > 0 ? '#4ade80' : '#ef4444'};">(${qty})</span></div>`;
+                }
+            }
+
+            modal.innerHTML = `
+                <div style="background:#1a1a1a; border:2px solid #9333ea; border-radius:45px; padding:30px; max-width:500px; width:100%; max-height:80vh; overflow-y:auto;">
+                    <div style="color:#9333ea; font-size:24px; font-weight:800; margin-bottom:20px;">${product.name}</div>
+                    
+                    <div style="margin-bottom:20px;">
+                        <div style="color:#9333ea; font-size:18px; margin-bottom:10px;">🎨 ВЫБЕРИТЕ ЦВЕТ</div>
+                        <div class="color-grid" id="${modalId}_colors">
+                            ${colorsHtml}
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom:20px;">
+                        <div style="color:#9333ea; font-size:18px; margin-bottom:10px;">📏 ВЫБЕРИТЕ РАЗМЕР</div>
+                        <div class="size-grid" id="${modalId}_sizes">
+                            ${sizesHtml}
+                        </div>
+                    </div>
+                    
+                    <div style="display:flex; gap:10px; margin-top:20px;">
+                        <button class="add-btn" onclick="addToCartWithOptions(${productId}, '${modalId}')">✅ ПОДТВЕРДИТЬ</button>
+                        <button class="delete-btn" onclick="document.getElementById('${modalId}').remove()" style="margin:0;">✕ ОТМЕНА</button>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+            
+            // Автоматически выбираем первый цвет
+            if (product.variations[0]) {
+                setTimeout(() => {
+                    selectColor(modalId, product.variations[0].color);
+                }, 100);
+            }
+        };
+
+        window.selectColor = function(modalId, color) {
+            // Находим товар
+            const productId = parseInt(document.querySelector(`[onclick*="addToCartWithOptions"]`).getAttribute('onclick').match(/\d+/)[0]);
+            const product = products.find(p => p.id === productId);
+            
+            // Обновляем UI
+            document.querySelectorAll(`#${modalId}_colors .color-item`).forEach(el => {
+                el.classList.remove('selected');
+                if (el.textContent.trim() === color) {
+                    el.classList.add('selected');
+                }
+            });
+
+            // Обновляем размеры для выбранного цвета
+            const variation = product.variations.find(v => v.color === color);
+            if (variation) {
+                const sizesGrid = document.getElementById(`${modalId}_sizes`);
+                let sizesHtml = '';
+                for (let [size, qty] of Object.entries(variation.sizes)) {
+                    sizesHtml += `<div class="size-item" onclick="selectSize('${modalId}', '${size}')" data-size="${size}" data-qty="${qty}">${size} <span style="color:${qty > 0 ? '#4ade80' : '#ef4444'};">(${qty})</span></div>`;
+                }
+                sizesGrid.innerHTML = sizesHtml;
+            }
+            
+            // Сохраняем выбранный цвет в data-атрибуте модалки
+            document.getElementById(modalId).dataset.selectedColor = color;
+        };
+
+        window.selectSize = function(modalId, size) {
+            document.querySelectorAll(`#${modalId}_sizes .size-item`).forEach(el => {
+                el.classList.remove('selected');
+                if (el.textContent.trim().startsWith(size)) {
+                    el.classList.add('selected');
+                }
+            });
+            document.getElementById(modalId).dataset.selectedSize = size;
+        };
+
+        window.addToCartWithOptions = function(productId, modalId) {
+            const modal = document.getElementById(modalId);
+            const selectedColor = modal.dataset.selectedColor;
+            const selectedSize = modal.dataset.selectedSize;
+            
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            if (!selectedColor) {
+                tg.showAlert('ВЫБЕРИТЕ ЦВЕТ');
+                return;
+            }
+
+            if (!selectedSize) {
+                tg.showAlert('ВЫБЕРИТЕ РАЗМЕР');
+                return;
+            }
+
+            // Проверяем наличие
+            const variation = product.variations.find(v => v.color === selectedColor);
+            if (!variation || variation.sizes[selectedSize] <= 0) {
+                tg.showAlert('ЭТОТ РАЗМЕР НЕТ В НАЛИЧИИ');
+                return;
+            }
+
+            // Добавляем в корзину
+            const existing = cart.find(item => 
+                item.id === productId && 
+                item.color === selectedColor && 
+                item.size === selectedSize
+            );
+
             if (existing) {
                 existing.qty += 1;
             } else {
-                cart.push({ id: id, qty: 1 });
+                cart.push({
+                    id: productId,
+                    color: selectedColor,
+                    size: selectedSize,
+                    qty: 1
+                });
             }
-            
+
             localStorage.setItem('cart', JSON.stringify(cart));
             updateCartCount();
-            showMessage('✅ ТОВАР ДОБАВЛЕН');
+            
+            modal.remove();
+            showMessage('✅ ТОВАР ДОБАВЛЕН В КОРЗИНУ');
         };
 
         window.deleteProduct = function(id) {
@@ -872,11 +1272,39 @@
             const name = document.getElementById('productName').value;
             if (!name) { tg.showAlert('ВВЕДИТЕ НАЗВАНИЕ'); return; }
 
+            // Собираем вариации
+            const variations = [];
+            const variationRows = document.querySelectorAll('.variation-row');
+            
+            variationRows.forEach(row => {
+                const color = row.querySelector('.variation-color')?.value;
+                const sizesStr = row.querySelector('.variation-sizes')?.value;
+                
+                if (color && sizesStr) {
+                    const sizes = {};
+                    const pairs = sizesStr.split(',');
+                    pairs.forEach(pair => {
+                        const [size, qty] = pair.split(':');
+                        if (size && qty) {
+                            sizes[size.trim()] = parseInt(qty) || 0;
+                        }
+                    });
+                    
+                    variations.push({ color, sizes });
+                }
+            });
+
+            if (variations.length === 0) {
+                tg.showAlert('ДОБАВЬТЕ ХОТЯ БЫ ОДИН ЦВЕТ');
+                return;
+            }
+
             const newProduct = {
                 id: Date.now(),
                 name: name,
                 category: document.getElementById('productCategory').value || 'БЕЗ КАТЕГОРИИ',
-                sizes: document.getElementById('productSizes').value || 'ВСЕ РАЗМЕРЫ',
+                image: document.getElementById('productImage').value || '',
+                variations: variations,
                 prices: {
                     byn: parseInt(document.getElementById('priceBYN').value) || 0,
                     usd: parseInt(document.getElementById('priceUSD').value) || 0
@@ -887,8 +1315,13 @@
             localStorage.setItem('products', JSON.stringify(products));
             
             // Очистка
-            ['productName','productCategory','productSizes','priceBYN','priceUSD']
-                .forEach(id => document.getElementById(id).value = '');
+            document.getElementById('productName').value = '';
+            document.getElementById('productCategory').value = '';
+            document.getElementById('productImage').value = '';
+            document.getElementById('priceBYN').value = '';
+            document.getElementById('priceUSD').value = '';
+            document.getElementById('variationsContainer').innerHTML = '';
+            variationCount = 0;
             
             renderProducts();
             showMessage('✅ ТОВАР ДОБАВЛЕН');
@@ -919,7 +1352,7 @@
             let total = 0;
             const curr = document.querySelector('#currencySelector .active')?.dataset.curr || 'BYN';
 
-            cart.forEach(item => {
+            cart.forEach((item, index) => {
                 const product = products.find(p => p.id === item.id);
                 if (!product) return;
                 
@@ -928,11 +1361,14 @@
 
                 html += `
                     <div class="cart-item">
-                        <div>
-                            <div style="font-weight:800; font-size:18px;">${product.name}</div>
-                            <div style="color:#9333ea; font-size:20px; font-weight:700; margin-top:5px;">${price} ${curr} x ${item.qty}</div>
+                        <div class="cart-item-header">
+                            <div class="cart-item-title">${product.name}</div>
+                            <button class="delete-btn" onclick="removeFromCart(${index})" style="width:auto; padding:8px 16px; margin:0;">✕</button>
                         </div>
-                        <button class="delete-btn" onclick="removeFromCart(${item.id})" style="width:auto; padding:10px 20px; margin:0;">✕</button>
+                        <div class="cart-item-details">
+                            🎨 ${item.color} • 📏 ${item.size}
+                        </div>
+                        <div class="cart-item-price">${price} ${curr} x ${item.qty}</div>
                     </div>
                 `;
             });
@@ -942,8 +1378,8 @@
             document.getElementById('cartCurrency').textContent = curr;
         }
 
-        window.removeFromCart = function(id) {
-            cart = cart.filter(item => item.id !== id);
+        window.removeFromCart = function(index) {
+            cart.splice(index, 1);
             localStorage.setItem('cart', JSON.stringify(cart));
             updateCartCount();
             renderCart();
@@ -983,15 +1419,18 @@
             
             cart.forEach(item => {
                 const product = products.find(p => p.id === item.id);
+                if (!product) return;
+                
                 const price = curr === 'BYN' ? product.prices.byn : product.prices.usd;
                 total += price * item.qty;
-                items.push(`${product.name} x${item.qty} = ${price * item.qty} ${curr}`);
+                items.push(`${product.name} (${item.color}, ${item.size}) x${item.qty} = ${price * item.qty} ${curr}`);
             });
 
             const order = {
                 id: Date.now(),
                 type: 'order',
                 user: username || firstName,
+                userId: user?.id,
                 items: items,
                 total: total,
                 currency: curr,
@@ -1026,6 +1465,7 @@
                 id: Date.now(),
                 type: 'product',
                 user: username || firstName,
+                userId: user?.id,
                 title: title,
                 category: document.getElementById('prodCategory').value || 'БЕЗ КАТЕГОРИИ',
                 contact: document.getElementById('prodContact').value || username || firstName,
@@ -1054,6 +1494,7 @@
                 id: Date.now(),
                 type: 'report',
                 user: username || firstName,
+                userId: user?.id,
                 topic: document.getElementById('reportTopic').value,
                 text: text,
                 contact: document.getElementById('reportContact').value || username || firstName,
