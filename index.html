@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>PURPLE LABEL | BUN & USD</title>
+    <title>PURPLE LABEL | BYN & USD</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         * {
@@ -43,22 +43,16 @@
                 0 0 40px rgba(147, 51, 234, 0.3);
         }
 
-        .glass-strong {
-            background: rgba(20, 20, 20, 0.9);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(147, 51, 234, 0.6);
-            box-shadow: 
-                0 25px 50px -15px #9333ea,
-                0 0 0 1px rgba(147, 51, 234, 0.4) inset,
-                0 0 60px rgba(147, 51, 234, 0.4);
-        }
-
         .purple-glow {
             text-shadow: 0 0 20px #9333ea, 0 0 40px rgba(147, 51, 234, 0.6);
         }
 
-        .gold-glow {
+        .byn-glow {
             text-shadow: 0 0 20px #fbbf24, 0 0 40px rgba(251, 191, 36, 0.4);
+        }
+
+        .usd-glow {
+            text-shadow: 0 0 20px #4ade80, 0 0 40px rgba(74, 222, 128, 0.4);
         }
 
         /* ШАПКА */
@@ -331,7 +325,7 @@
             font-weight: 900;
         }
 
-        .bun { 
+        .byn { 
             color: #fbbf24; 
             text-shadow: 0 0 20px rgba(251,191,36,0.8);
         }
@@ -430,7 +424,7 @@
             text-shadow: 0 0 40px rgba(147,51,234,0.9);
         }
 
-        /* ВАЛЮТЫ - ТОЛЬКО 2 */
+        /* ВАЛЮТЫ - BYN И USD */
         .currency-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -457,7 +451,7 @@
             transform: scale(1.05);
         }
 
-        .currency-item[data-curr="BUN"].active {
+        .currency-item[data-curr="BYN"].active {
             border-color: #fbbf24;
             box-shadow: 0 0 40px rgba(251,191,36,0.6);
         }
@@ -641,7 +635,7 @@
                 <input type="text" class="input" id="productSizes" placeholder="РАЗМЕРЫ">
                 
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin:20px 0;">
-                    <input type="number" class="input" id="priceBUN" placeholder="ЦЕНА BUN" style="border-color:#fbbf24;">
+                    <input type="number" class="input" id="priceBYN" placeholder="ЦЕНА BYN" style="border-color:#fbbf24;">
                     <input type="number" class="input" id="priceUSD" placeholder="ЦЕНА USD" style="border-color:#4ade80;">
                 </div>
 
@@ -663,13 +657,13 @@
                 <div class="cart-total">
                     <div style="color:#a0a0a0; font-size:18px; margin-bottom:8px;">ИТОГО</div>
                     <div class="cart-total-price" id="cartTotal">0</div>
-                    <div style="color:#9333ea; font-size:22px; margin-top:8px;" id="cartCurrency">BUN</div>
+                    <div style="color:#9333ea; font-size:22px; margin-top:8px;" id="cartCurrency">BYN</div>
                 </div>
 
-                <!-- ВАЛЮТА - ТОЛЬКО BUN И USD -->
+                <!-- ВАЛЮТА - BYN И USD -->
                 <div class="currency-grid" id="currencySelector">
-                    <div class="currency-item active" data-curr="BUN" style="border-color:#fbbf24;">🟡 BUN</div>
-                    <div class="currency-item" data-curr="USD" style="border-color:#4ade80;">💵 USD</div>
+                    <div class="currency-item active" data-curr="BYN" style="border-color:#fbbf24;">🇧🇾 BYN</div>
+                    <div class="currency-item" data-curr="USD" style="border-color:#4ade80;">🇺🇸 USD</div>
                 </div>
 
                 <!-- ОПЛАТА -->
@@ -748,21 +742,21 @@
                 name: 'NIKE AIR FORCE 1', 
                 category: 'КРОССОВКИ', 
                 sizes: '40-45',
-                prices: { bun: 2200, usd: 110 }
+                prices: { byn: 2200, usd: 110 }
             },
             { 
                 id: 2, 
                 name: 'ESSENTIALS FOG', 
                 category: 'ХУДИ', 
                 sizes: 'S-L',
-                prices: { bun: 1850, usd: 95 }
+                prices: { byn: 1850, usd: 95 }
             },
             { 
                 id: 3, 
                 name: 'ADIDAS CAMPUS', 
                 category: 'КРОССОВКИ', 
                 sizes: '41-44',
-                prices: { bun: 2000, usd: 105 }
+                prices: { byn: 2000, usd: 105 }
             }
         ];
 
@@ -831,11 +825,11 @@
                         <div class="product-info">${p.category} • ${p.sizes}</div>
                         <div class="prices">
                             <div class="price-item">
-                                <div class="price-currency bun gold-glow">🟡 BUN</div>
-                                <div class="price-value bun">${p.prices.bun}</div>
+                                <div class="price-currency byn-glow">🇧🇾 BYN</div>
+                                <div class="price-value byn">${p.prices.byn}</div>
                             </div>
                             <div class="price-item">
-                                <div class="price-currency usd">💵 USD</div>
+                                <div class="price-currency usd-glow">🇺🇸 USD</div>
                                 <div class="price-value usd">${p.prices.usd}</div>
                             </div>
                         </div>
@@ -884,7 +878,7 @@
                 category: document.getElementById('productCategory').value || 'БЕЗ КАТЕГОРИИ',
                 sizes: document.getElementById('productSizes').value || 'ВСЕ РАЗМЕРЫ',
                 prices: {
-                    bun: parseInt(document.getElementById('priceBUN').value) || 0,
+                    byn: parseInt(document.getElementById('priceBYN').value) || 0,
                     usd: parseInt(document.getElementById('priceUSD').value) || 0
                 }
             };
@@ -893,7 +887,7 @@
             localStorage.setItem('products', JSON.stringify(products));
             
             // Очистка
-            ['productName','productCategory','productSizes','priceBUN','priceUSD']
+            ['productName','productCategory','productSizes','priceBYN','priceUSD']
                 .forEach(id => document.getElementById(id).value = '');
             
             renderProducts();
@@ -923,13 +917,13 @@
 
             let html = '';
             let total = 0;
-            const curr = document.querySelector('#currencySelector .active')?.dataset.curr || 'BUN';
+            const curr = document.querySelector('#currencySelector .active')?.dataset.curr || 'BYN';
 
             cart.forEach(item => {
                 const product = products.find(p => p.id === item.id);
                 if (!product) return;
                 
-                const price = curr === 'BUN' ? product.prices.bun : product.prices.usd;
+                const price = curr === 'BYN' ? product.prices.byn : product.prices.usd;
                 total += price * item.qty;
 
                 html += `
@@ -989,7 +983,7 @@
             
             cart.forEach(item => {
                 const product = products.find(p => p.id === item.id);
-                const price = curr === 'BUN' ? product.prices.bun : product.prices.usd;
+                const price = curr === 'BYN' ? product.prices.byn : product.prices.usd;
                 total += price * item.qty;
                 items.push(`${product.name} x${item.qty} = ${price * item.qty} ${curr}`);
             });
